@@ -26,4 +26,32 @@
 
 <?php endif; ?>
 
+
+<div class="container mt-4">
+    <h1 class="text-center text-primary">Bootstrap is wroking</h1>
+    <button class="btn btn-success">Click me</button>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 bg-primary text-white">
+            Left
+        </div>
+        <div class="col-md-6 bg-warning">
+            Right
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-4">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">Example card text.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</div>
+
 <?php get_footer(); ?>
