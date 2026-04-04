@@ -1,0 +1,8 @@
+.slider{
+    background:linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    padding:16px;
+    text-align:center;
+    border-radius:8px;
+    box-shadow:0 8px 30px rgba(12,18,29,0.06);
+}
+.slider .slide{padding:18px}

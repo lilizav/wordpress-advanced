@@ -36,7 +36,7 @@ function ds_theme_assets() {
 }
 
 
-add_action('wp_enqueue_scripts', 'ds_add_bootstrap_cdn');
+add_action('wp_enqueue_scripts', 'ds_theme_assets');
 
 
 
@@ -89,9 +89,9 @@ function register_foo_widget(){
 }
 
 
+
 add_action('widgets_init','register_foo_widget');
 
 
-?>
 
 
