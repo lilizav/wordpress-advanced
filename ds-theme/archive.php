@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="container">
-    <h1>Movies Archive</h1>
+    <h1>Archive Page</h1>
 
     <?php if ( have_posts() ) : ?>
         <?php while ( have_posts() ) : the_post(); ?>
@@ -12,17 +12,15 @@
                     </a>
                 </h2>
 
-                <?php if ( has_post_thumbnail() ) : ?>
-                    <div class="movie-thumbnail">
-                        <?php the_post_thumbnail( 'medium' ); ?>
-                    </div>
-                <?php endif; ?>
+                <p>
+                    Posted on <?php the_time( 'F j, Y' ); ?>
+                </p>
 
                 <?php the_excerpt(); ?>
             </article>
         <?php endwhile; ?>
     <?php else : ?>
-        <p>No movies found.</p>
+        <p>No posts found.</p>
     <?php endif; ?>
 </main>
 

@@ -5,36 +5,32 @@
 
     <?php
     $args = array(
-        'post_type'         => 'movies',
-        'post_per_page'     => 10
-
+        'post_type'      => 'movies',
+        'posts_per_page' => 10
     );
 
-    $the_query = new WP_Query($args);
+    $the_query = new WP_Query( $args );
     ?>
 
-    <?php if ($the_query -> have_posts()):?>
-    <?php while ($the_query->have_posts()) : $the_query->the_post();?>
-       <article id="post-<?php the_ID(); ?>"<?php post_class(); ?>>
-        <h2>
-            <a href="<?php the_permalink(); ?>">
-                <?php the_title(); ?>
-            </a>
+    <?php if ( $the_query->have_posts() ) : ?>
+        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <h2><?php the_title(); ?></h2>
 
+                <?php if ( has_post_thumbnail() ) : ?>
+                    <div class="movie-thumbnail">
+                        <?php the_post_thumbnail( 'medium' ); ?>
+                    </div>
+                <?php endif; ?>
 
-        </h2>
+                <?php the_content(); ?>
+            </article>
+        <?php endwhile; ?>
 
-        <p>
-            Posted on <?php the_time('F j, Y');?>
-
-        </p>
-
-        <?php the_excerpt();?>
-    </article>
-    <?php endwhile;?>
-<?php else: ?>
-    <p>No posts found</p>
-<?php endif; ?>
-
+        <?php wp_reset_postdata(); ?>
+    <?php else : ?>
+        <p>Sorry, no posts matched your criteria.</p>
+    <?php endif; ?>
 </main>
-<?php get_footer();?>
+
+<?php get_footer(); ?>
